@@ -5,11 +5,19 @@ int c = 2;
 int main(void) {
 
     int a = 3;
-    {
-        a += 1;
-        int c = 4;
-        int *p = &c;
-    }
-    printf("%d,%d\n", a, *p);
+    int *p = &a;
+    int *q = p;
 
+    printf("a = %d\n", a);
+    printf("*p = %d\n", *p);
+    printf("*q = %d\n", *q);
+
+    printf("&a = %p\n", &a);
+    printf("&p = %p\n", &p);
+    printf("&q = %p\n", &q);
+    printf("p = %p\n", p);
+    printf("q = %p\n", q);
+    printf("&c = %p\n", &c);
+    printf("c = %d\n", c);
+    
 }
