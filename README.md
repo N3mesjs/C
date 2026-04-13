@@ -1,1 +1,1 @@
-# Clang
+# C college course
