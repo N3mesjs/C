@@ -22,23 +22,24 @@ int main() {
 
 
 int matrice_simmetrica(int *mat, int righe, int colonne){
-if(righe!=colonne) {
-    printf("La matrice non è simmetrica");
+if(righe != colonne) {
+    //printf("La matrice non è simmetrica\n");
     return 0;
 };
 
 for(int i=0; i<righe; i++){
-    for(int j=0; j<colonne; j++){
-        int a = mat[i+j];
-        int m = mat[];
+    for(int j=i+1; j<colonne; j++){
+        int currentIndex = i*righe + j;
+        int simmetricIndex = j*righe + i;
 
-        if(m != mat[i][j]) {
-            printf("La matrice non è simmetrica");
+        if(mat[currentIndex] != mat[simmetricIndex]) {
+            //printf("La matrice non è simmetrica\n");
             return 0;
         }
     }
 }
-
+//printf("La matrice è simmetrica\n");
+return 1;
 }
 
 
@@ -68,7 +69,7 @@ void consegna_moodle() {
     int matrice[righe][colonne];
     leggi_array(*matrice, righe*colonne); 
 
-    if (matrice_simmetrica(&matrice[0], righe, colonne))
+    if (matrice_simmetrica(matrice[0], righe, colonne))
         printf("Matrice simmetrica");
     else
         printf("Matrice non simmetrica");
